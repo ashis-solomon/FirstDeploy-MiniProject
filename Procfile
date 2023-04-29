@@ -1,1 +1,1 @@
-web: python manage.py initdb && gunicorn mysite.wsgi
+web: python manage.py initdb && gunicorn core.wsgi
