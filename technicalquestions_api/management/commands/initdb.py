@@ -11,9 +11,9 @@ class Command(BaseCommand):
         call_command('initskills')
         call_command('initscrapejobs')
         call_command('temp_init_thejsonresp')
-        call_command('crontab show')
-        call_command('crontab add')
-        call_command('crontab show')
-        call_command('crontab show')
+        # call_command('crontab', 'show')
+        call_command('crontab', 'add')
+        # call_command('crontab', 'show')
+        # call_command('crontab', 'show')
 
         self.stdout.write(self.style.SUCCESS('All management commands completed.'))
