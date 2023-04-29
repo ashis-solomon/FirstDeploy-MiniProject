@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'django_crontab',
 
     'authentication.apps.AuthenticationConfig',
     'technicalquestions_api.apps.TechnicalquestionsApiConfig',
@@ -54,7 +55,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -95,9 +96,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'Dv6w9EvN0trUaKBvaMIP',
-        'HOST': 'containers-us-west-171.railway.app',
-        'PORT': '8045',
+        'PASSWORD': 'ob2EEYLYDLzVUBqGW1vv',
+        'HOST': 'containers-us-west-132.railway.app',
+        'PORT': '6878',
     }
 }
 
@@ -172,3 +173,8 @@ SIMPLE_JWT = {
 }
 
 AUTH_USER_MODEL = 'authentication.User'
+
+
+CRONJOBS = [
+    ('* * * * *', 'jobscrape_api.cron.my_scheduled_job')
+]
